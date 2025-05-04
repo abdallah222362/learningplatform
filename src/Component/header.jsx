@@ -21,52 +21,81 @@ const header = () => {
       animationName: "fade-out, scale-out",
       animationDuration: "2000ms",
     }} >
-      <Box mr={6}> {/* Increase spacing between the logo and the site name */}
+      <Box mr={6}> 
         <img src={icon} alt="Logo" width="40px" height="40px"  />
       </Box>
-      <Stack ml={4}> {/* Add margin-left to move the site name closer to the logo */}
+      <Stack ml={4}>  
         <Text fontWeight="bold" color="#DAD7CD" textStyle="4xl">fritz</Text>
       </Stack>
       <Flex flex="1" justifyContent="flex-end" alignItems="center" gap={4}>
         <Avatar.Root size="lg">
+          <RouterLink   to={"/homepage/Dashboard/assigment/studenthub/profile"} >
           <Avatar.Fallback />
+          </RouterLink>
         </Avatar.Root>
         
         <Menu.Root>
       <Menu.Trigger asChild>
-        <Button variant="outline" size="sm">
-          Open Menu
+        <Button variant="surface" size="sm">
+          NAVIGATION
         </Button>
       </Menu.Trigger>
       <Portal>
         <Menu.Positioner>
           <Menu.Content>
-            <Menu.Item value="rename">Rename</Menu.Item>
-            <Menu.Item value="export">Export</Menu.Item>
-            <Menu.Item
-              value="delete"
-              color="fg.error"
-              _hover={{ bg: "bg.error", color: "fg.error" }}
-            >
-              Delete...
-            </Menu.Item>
+          <Box mb={5} mt={2}>
+          <RouterLink to={"/homepage/"} style={{ textDecoration: "none", color: "white", fontWeight: "bold" }}>
+            Homepage
+          </RouterLink>
+        </Box>
+        <Box mb={5} mt={2}>
+          <RouterLink to={"/homepage/Dashboard"} style={{ textDecoration: "none", color: "white", fontWeight: "bold" }}>
+            Dashboard
+          </RouterLink>
+        </Box>
+        <Box mb={5} mt={2}>
+          <RouterLink to={"/homepage/Dashboard/course"} style={{ textDecoration: "none", color: "white", fontWeight: "bold" }}>
+            Course
+          </RouterLink>
+        </Box>
+        <Box mb={5} mt={2}>
+          <RouterLink to={"/homepage/Dashboard/assigment"} style={{ textDecoration: "none", color: "white", fontWeight: "bold" }}>
+            Assignment
+          </RouterLink>
+        </Box>
+
+
+        <Box mb={5} mt={2}>
+          <RouterLink to={"/homepage/Dashboard/assigment/studenthub"} style={{ textDecoration: "none", color: "white", fontWeight: "bold" }}>
+          StudentHub
+          </RouterLink>
+        </Box>
+
+        <Box mb={5} mt={2}>
+          <RouterLink to={"/homepage/Dashboard/assigment/Feedback"} style={{ textDecoration: "none", color: "white", fontWeight: "bold" }}>
+          Feedback
+          </RouterLink>
+        </Box>
+
+        <Box mb={5} mt={2}>
+          <RouterLink to={"/homepage/Dashboard/assigment/studenthub/profile"} style={{ textDecoration: "none", color: "white", fontWeight: "bold" }}>
+          Profile
+          </RouterLink>
+        </Box>
+
+    
+        <Box>
+          <RouterLink to={"/"} style={{ textDecoration: "none", color: "red", fontWeight: "bold" }}>
+            Log Out
+          </RouterLink>
+        </Box>
+
           </Menu.Content>
         </Menu.Positioner>
       </Portal>
     </Menu.Root>
 
-        <RouterLink to="/" style={{ color: "white", textDecoration: "none" }} >
-          Log Out
-        </RouterLink>
-        <RouterLink to="/homepage/Dashboard" style={{ color: "white", textDecoration: "none" }} >
-          Dashboard
-        </RouterLink>
-        <RouterLink to="/homepage/Dashboard/assigment" style={{ color: "white", textDecoration: "none" }} >
-        Assigment
-        </RouterLink>
-        <RouterLink to="/homepage/Dashboard/feedback" style={{ color: "white", textDecoration: "none" }} >
-          Feedback
-        </RouterLink>
+       
       </Flex>
     </Flex>
   );
